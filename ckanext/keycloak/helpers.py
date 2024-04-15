@@ -77,7 +77,7 @@ def _assign_organization(userinfo):
    org_dict = {
        'username': userinfo['username'],
        'organization': userinfo['my_plugin'][0],
-        'role': userinfo['my_plugin'][1],
+       'role': userinfo['my_plugin'][1],
    }
    created_user_dict = tk.get_action(
        u'organization_member_create'
