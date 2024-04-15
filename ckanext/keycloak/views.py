@@ -68,7 +68,7 @@ def sso_login():
             },
             'my_plugin': {
                 'organization': userinfo['organization'],
-                'role': userinfo['role'][2]
+                'role': userinfo['role']
             }
         }
         context = {"model": model, "session": model.Session}
