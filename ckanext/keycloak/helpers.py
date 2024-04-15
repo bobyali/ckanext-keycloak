@@ -67,10 +67,22 @@ def _create_user(userinfo):
     created_user_dict = tk.get_action(
         u'user_create'
     )(context, userinfo)
-    
+    _assign_organization(userinfo)
     return _get_user_by_email(created_user_dict['email'])
 
-
+def _assign_organization(userinfo):
+   context = {
+        u'ignore_auth': True,
+    }
+   org_dict = {
+       'username': userinfo['username'],
+       'organization': userinfo['my_plugin'][0],
+        'role': userinfo['my_plugin'][1],
+   }
+   created_user_dict = tk.get_action(
+       u'organization_member_create'
+   )(context,org_dict)
+    
 def button_style():
 
     return tk.config.get('ckanext.keycloak.button_style',
