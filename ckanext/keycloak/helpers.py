@@ -75,9 +75,9 @@ def _assign_organization(userinfo):
         u'ignore_auth': True,
     }
    org_dict = {
-       'id': userinfo['my_plugin'][0],
+       'id': 'AeroDCS',
        'username': userinfo['username'],
-       'role': userinfo['my_plugin'][1]
+       'role': 'member'
    }
    created_user_org = tk.get_action(
        u'organization_member_create'
