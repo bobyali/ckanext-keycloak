@@ -67,7 +67,7 @@ def sso_login():
                 'idp': 'google'
             },
             'my_plugin': {
-                'organization': userinfo['organization'],
+                'organization': userinfo['organization']
                 #'role': userinfo['role']
             }
         }
