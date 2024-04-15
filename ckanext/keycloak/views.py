@@ -68,7 +68,7 @@ def sso_login():
             },
             'my_plugin': {
                 'organization': userinfo['organization'],
-                'role': userinfo['realmrole']
+                'role': userinfo['realm_access.roles']
             }
         }
         context = {"model": model, "session": model.Session}
