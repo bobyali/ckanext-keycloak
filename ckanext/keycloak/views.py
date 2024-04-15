@@ -65,6 +65,10 @@ def sso_login():
             'fullname': userinfo['name'],
             'plugin_extras': {
                 'idp': 'google'
+            },
+            'my_plugin': {
+                'organization': userinfo['organization'],
+                'role': userinfo['realmrole']
             }
         }
         context = {"model": model, "session": model.Session}
