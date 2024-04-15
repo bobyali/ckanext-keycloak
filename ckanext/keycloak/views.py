@@ -65,11 +65,11 @@ def sso_login():
             'fullname': userinfo['name'],
             'plugin_extras': {
                 'idp': 'google'
-            },
-            'my_plugin': {
-                'organization': userinfo['organization']
-                #'role': userinfo['role']
             }
+         #   'my_plugin': {
+          #      'organization': userinfo['organization']
+                #'role': userinfo['role']
+          #  }
         }
         context = {"model": model, "session": model.Session}
         g.user_obj = helpers.process_user(user_dict)
