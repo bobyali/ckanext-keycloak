@@ -69,20 +69,20 @@ def _create_user(userinfo):
     )(context, userinfo)
     org = _assign_organization(userinfo)
     return _get_user_by_email(created_user_dict['email'])
-
- def _assign_organization(userinfo):
+    
+def _assign_organization(userinfo):
     context = {
         u'ignore_auth': True,
     }
     org_dict = {
-       'id': userinfo['my_plugin']['organization'],
-       'username': userinfo['username'],
-       'role': userinfo['my_plugin']['role']
+        'id': userinfo['my_plugin']['organization'],
+        'username': userinfo['username'],
+        'role': userinfo['my_plugin']['role']
     }
     created_user_org = tk.get_action(
-       u'organization_member_create'
+        u'organization_member_create'
     )(context, org_dict)
-   return created_user_org
+    return created_user_org
     
 def button_style():
 
