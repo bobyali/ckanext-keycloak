@@ -57,6 +57,7 @@ def sso_login():
     token = client.get_token(data['code'], redirect_uri)
     userinfo = client.get_user_info(token)
     log.info("+++++++SSO Login: {}".format(userinfo))
+    log.info("+++++++ Token".format(token))
     if userinfo:
         user_dict = {
             'name': helpers.ensure_unique_username_from_email(userinfo['preferred_username']),
