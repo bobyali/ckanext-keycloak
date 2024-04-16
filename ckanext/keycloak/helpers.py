@@ -69,7 +69,7 @@ def _create_user(userinfo):
     )(context, userinfo)
     created_user_org = tk.get_action(
        u'organization_member_create'
-   )(context, {'id': 'AeroDCS', 'username': userinfo['username'], 'role': 'member'})
+   )(context, {'id': 'AeroDCS', 'username': 'testuser2', 'role': 'member'})
     return _get_user_by_email(created_user_dict['email'])
 
 #def _assign_organization(userinfo):
