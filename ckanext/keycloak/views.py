@@ -56,7 +56,7 @@ def sso_login():
     data = tk.request.args
     token = client.get_token(data['code'], redirect_uri)
     userinfo = client.get_user_info(token)
-    log.info("SSO Login: {}".format(userinfo))
+    log.info("+++++++SSO Login: {}".format(userinfo))
     if userinfo:
         user_dict = {
             'name': helpers.ensure_unique_username_from_email(userinfo['preferred_username']),
